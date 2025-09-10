@@ -45,4 +45,3 @@ class Foo {
         printThird.run();
     }
 }
-
