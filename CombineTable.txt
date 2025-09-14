@@ -12,3 +12,4 @@ LEFT JOIN
 ON 
     p.personId = a.personId;
 
+
