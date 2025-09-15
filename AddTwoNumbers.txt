@@ -66,5 +66,3 @@ public class Solution {
         System.out.println(result);  // Output: [7,0,8]
     }
 }
-
-
