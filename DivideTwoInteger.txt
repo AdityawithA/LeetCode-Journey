@@ -10,15 +10,15 @@ Note: Assume we are dealing with an environment that could only store integers w
 
 public class Solution {
     public int divide(int dividend, int divisor) {
-      
+        // Edge case: overflow
         if (dividend == Integer.MIN_VALUE && divisor == -1) {
             return Integer.MAX_VALUE;
         }
 
-      
+        // Determine sign
         boolean negative = (dividend < 0) ^ (divisor < 0);
 
-       
+        // Work with long to avoid overflow
         long a = Math.abs((long) dividend);
         long b = Math.abs((long) divisor);
 
@@ -37,4 +37,3 @@ public class Solution {
         return negative ? -result : result;
     }
 }
-
