@@ -7,4 +7,5 @@ Each word must consist of lowercase characters only.
 Words are separated by one or more whitespace characters.
 
 
+
 tr -s ' ' '\n' < words.txt | sort | uniq -c | sort -nr | awk '{print $2, $1}'
