@@ -93,7 +93,7 @@ I regularly update this repository with new solutions and improvements as I cont
 
 ## 🔗 Connect With Me
 
-GitHub: https://github.com/YOUR_USERNAME
+GitHub: https://github.com/AdityawithA/LeetCode-Journey/tree/main
 
 ---
 
