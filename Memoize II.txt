@@ -1,0 +1,33 @@
+Given a function fn, return a memoized version of that function.
+
+A memoized function is a function that will never be called twice with the same inputs. Instead it will return a cached value.
+
+fn can be any function and there are no constraints on what type of values it accepts. Inputs are considered identical if they are === to each other.
+
+
+function memoize(fn) {
+  const cache = new Map();  // store key -> result
+  let calls = 0;
+
+  return function(...args) {
+    // create a key based on actual object references (not JSON/stringify)
+    let key = args.map(arg => String(arg)).join("|"); 
+    
+    // Instead of stringify, we’ll use a WeakMap chain to properly cache 
+    // by reference equality:
+    let node = cache;
+    for (let arg of args) {
+      if (!node.has(arg)) node.set(arg, new Map());
+      node = node.get(arg);
+    }
+
+    if (node.has("value")) {
+      return node.get("value");
+    }
+
+    calls++;
+    const result = fn(...args);
+    node.set("value", result);
+    return result;
+  };
+}
